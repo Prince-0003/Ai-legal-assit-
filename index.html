@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalAI - AI-Powered Legal Assistance Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-balance-scale"></i>
+                    <span>LegalAI</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#analysis">Case Analysis</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <a href="#" class="btn btn-primary">Login</a>
+                    <a href="#" class="btn">Sign Up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AI-Powered Legal Assistance</h1>
+                <p>Get instant legal analysis, connect with verified lawyers, and join a thriving legal community. Affordable, reliable, and accessible to everyone.</p>
+                <a href="#analysis" class="btn">Analyze Your Case</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Analysis Section -->
+    <section class="case-analysis" id="analysis">
+        <div class="container">
+            <h2 class="section-title">AI Case Analysis</h2>
+            <p class="section-subtitle">Describe your legal issue and our AI will analyze it to provide relevant IPC sections, required documents, and possible outcomes.</p>
+            
+            <div class="case-form">
+                <form id="caseForm">
+                    <div class="form-group">
+                        <label for="caseType">Case Type</label>
+                        <select id="caseType" name="caseType">
+                            <option value="">Select Case Type</option>
+                            <option value="criminal">Criminal Case</option>
+                            <option value="civil">Civil Case</option>
+                            <option value="family">Family Dispute</option>
+                            <option value="property">Property Matter</option>
+                            <option value="consumer">Consumer Issue</option>
+                            <option value="employment">Employment/Labor</option>
+                            <option value="cyber">Cyber Crime</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="caseDescription">Case Description</label>
+                        <textarea id="caseDescription" name="caseDescription" placeholder="Please describe your legal issue in detail. Include relevant facts, parties involved, and any specific concerns..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="caseDuration">Case Duration (How long has this been going on?)</label>
+                        <input type="text" id="caseDuration" name="caseDuration" placeholder="e.g., 3 months, 1 year, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Location (State/City)</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Delhi, Maharashtra, etc.">
+                    </div>
+                    
+                    <div class="file-upload">
+                        <input type="file" id="fileInput">
+                        <label for="fileInput">Attach relevant documents (if any)</label>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Analyze Case</button>
+                </form>
+                
+                <div class="analysis-result" id="analysisResult">
+                    <h3>Case Analysis Result</h3>
+                    <p>Based on your description, here's our analysis:</p>
+                    
+                    <div class="analysis-details" id="analysisDetails">
+                        <!-- Dynamic content will be inserted here -->
+                    </div>
+                    
+                    <div style="margin-top: 20px; text-align: center;">
+                        <button class="btn btn-primary" id="connectLawyerBtn">Connect with Verified Lawyers</button>
+                        <button class="btn" id="newAnalysisBtn" style="margin-left: 10px;">Analyze Another Case</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Our Features</h2>
+            <p class="section-subtitle">LegalAI combines cutting-edge technology with legal expertise to provide comprehensive legal assistance.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Legal Analysis</h3>
+                    <p>Get instant analysis of your legal issues with applicable laws, sections, and possible outcomes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Verified Lawyers</h3>
+                    <p>Connect with verified and experienced lawyers only when you need professional representation.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning Hub</h3>
+                    <p>Access real judgments, case studies, and legal resources to enhance your legal knowledge.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Legal Community</h3>
+                    <p>Join forums, discussions, and knowledge-sharing sessions with legal professionals and students.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Case Videos</h3>
+                    <p>Watch real case discussions and analyses by top lawyers and judges for practical learning.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Gamified Learning</h3>
+                    <p>Learn legal concepts through interactive games, quizzes, and mock trials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community" id="community">
+        <div class="container">
+            <h2 class="section-title">Legal Community Hub</h2>
+            <p class="section-subtitle">Connect, learn, and share with legal professionals, students, and enthusiasts.</p>
+            
+            <div class="community-tabs">
+                <button class="tab-btn active" data-tab="blogs">Blogs & Articles</button>
+                <button class="tab-btn" data-tab="videos">Case Videos</button>
+                <button class="tab-btn" data-tab="forum">Q&A Forum</button>
+            </div>
+            
+            <div class="tab-content active" id="blogsTab">
+                <div class="blogs-grid">
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Legal Blog" class="blog-img">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>By Justice R. Sharma</span>
+                                <span>May 15, 2023</span>
+                            </div>
+                            <h3>Landmark Judgment on Digital Privacy Rights</h3>
+                            <p>Analysis of the recent Supreme Court judgment that expanded the scope of privacy rights in the digital age.</p>
+                            <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1565689228800-8d2fdd5fb3f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Legal Blog" class="blog-img">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>By Adv. Priya Singh</span>
+                                <span>June 2, 2023</span>
+                            </div>
+                            <h3>Navigating Corporate Law in Startup Ecosystem</h3>
+                            <p>Essential legal considerations for startups when setting up their corporate structure and compliance.</p>
+                            <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Legal Blog" class="blog-img">
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>By Dr. A. Kumar</span>
+                                <span>June 10, 2023</span>
+                            </div>
+                            <h3>Recent Amendments in Criminal Procedure Code</h3>
+                            <p>Detailed analysis of the 2023 amendments and their implications for criminal trials in India.</p>
+                            <a href="#" class="btn" style="margin-top: 15px; display: inline-block;">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="videosTab">
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1590086782957-93c06ef21604?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Video Thumbnail" class="blog-img">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <div class="video-meta">
+                                <span>By Justice M. Kapoor</span>
+                                <span>45 min</span>
+                            </div>
+                            <h3>Analysis of Landmark Constitutional Cases</h3>
+                            <p>Detailed discussion of five landmark cases that shaped Indian constitutional law.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Video Thumbnail" class="blog-img">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <div class="video-meta">
+                                <span>By Adv. R. Verma</span>
+                                <span>32 min</span>
+                            </div>
+                            <h3>Contract Law: Common Pitfalls and Solutions</h3>
+                            <p>Practical advice on drafting contracts and avoiding common legal pitfalls.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Video Thumbnail" class="blog-img">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <div class="video-meta">
+                                <span>By Dr. S. Patel</span>
+                                <span>58 min</span>
+                            </div>
+                            <h3>Intellectual Property Rights in Digital Era</h3>
+                            <p>Exploring the challenges and solutions for protecting IP in the digital age.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="forumTab">
+                <div class="forum-grid">
+                    <div class="forum-card">
+                        <div class="forum-content">
+                            <h3>Tenant Rights in Case of Property Damage</h3>
+                            <p>My rented apartment suffered water damage due to plumbing issues. What are my rights as a tenant regarding repairs and rent?</p>
+                            <div class="forum-meta">
+                                <span>By Ankit S.</span>
+                                <span>2 days ago</span>
+                            </div>
+                        </div>
+                        <div class="forum-stats">
+                            <span><i class="fas fa-comment"></i> 12 answers</span>
+                            <span><i class="fas fa-eye"></i> 145 views</span>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-card">
+                        <div class="forum-content">
+                            <h3>Legal Steps for Online Fraud Recovery</h3>
+                            <p>I was cheated in an online shopping transaction. What legal steps can I take to recover my money?</p>
+                            <div class="forum-meta">
+                                <span>By Priya M.</span>
+                                <span>5 days ago</span>
+                            </div>
+                        </div>
+                        <div class="forum-stats">
+                            <span><i class="fas fa-comment"></i> 8 answers</span>
+                            <span><i class="fas fa-eye"></i> 98 views</span>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-card">
+                        <div class="forum-content">
+                            <h3>Inheritance Laws for NRIs</h3>
+                            <p>As an NRI, what are the legal procedures to claim inheritance of property in India?</p>
+                            <div class="forum-meta">
+                                <span>By Rajesh K.</span>
+                                <span>1 week ago</span>
+                            </div>
+                        </div>
+                        <div class="forum-stats">
+                            <span><i class="fas fa-comment"></i> 15 answers</span>
+                            <span><i class="fas fa-eye"></i> 210 views</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="#" class="btn btn-primary">Ask a Question</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About LegalAI</h2>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Revolutionizing Legal Assistance with AI</h2>
+                    <p>LegalAI is an innovative platform that combines artificial intelligence with legal expertise to make legal assistance affordable, accessible, and reliable for everyone.</p>
+                    <p>Our mission is to bridge the gap between citizens and legal services by providing instant AI-powered analysis, connecting users with verified lawyers, and creating a vibrant community for legal knowledge sharing.</p>
+                    <p>Whether you're a citizen seeking guidance, a law student looking for practical exposure, or a legal professional wanting to share expertise, LegalAI is your comprehensive legal companion.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Cases Analyzed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Verified Lawyers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">25,000+</div>
+                            <div class="stat-label">Community Members</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="About LegalAI" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LegalAI</h3>
+                    <p>AI-powered legal assistance platform making legal guidance affordable, accessible, and reliable for everyone.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#analysis">Case Analysis</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Legal Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Video Library</a></li>
+                        <li><a href="#">Legal Dictionary</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@legalai.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 LegalAI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
